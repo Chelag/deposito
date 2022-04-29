@@ -1,5 +1,9 @@
 package com.mycompany.deposito;
 
+/**
+ * 
+ * @author carlo
+ */
 public class CCuenta {
 
 
@@ -8,10 +12,20 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * Constructor
+     */
     public CCuenta()
     {
     }
 
+    /**
+     *
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -19,11 +33,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     *
+     * @return
+     */
     public double estado()
     {
         return saldo;
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -31,6 +54,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
@@ -40,7 +68,13 @@ public class CCuenta {
         saldo = saldo - cantidad;
     }
     
-    public void operativa_cuenta(double retirarC, double ingresarC) {
+    /**
+     *
+     * @param retirarC
+     * @param ingresarC
+     * @param cantidad
+     */
+    public void operativa_cuenta(double retirarC, double ingresarC, float cantidad) {
         try {
             retirar (retirarC);
         } catch (Exception e) {
@@ -54,34 +88,66 @@ public class CCuenta {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCuenta() {
         return cuenta;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getSaldo() {
         return saldo;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @param cuenta
+     */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
+    /**
+     *
+     * @param saldo
+     */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
+    /**
+     *
+     * @param tipoInterés
+     */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
